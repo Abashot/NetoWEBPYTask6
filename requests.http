@@ -1,0 +1,80 @@
+@baseUrl = http://127.0.0.1:5000
+
+# создание объявления
+POST {{baseUrl}}/adv
+Content-Type: application/json
+
+{
+    "header": "IPhone 10",
+    "description": "Продам Яблофон-10. Состояние: убитый. Цена: мешок картошки",
+    "owner": "1"
+    }
+
+
+###
+
+# создание пользователя
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+    "name": "Вениамин",
+    "email": "venia@mail.com",
+    "password": "0000"
+    }
+
+
+###
+
+#обновление объявления
+PATCH {{baseUrl}}/adv/1
+Content-Type: application/json
+
+{  
+    "header": "Samsung Galaxy S20",
+    "description": "Продам Samsung Galaxy S20. Состояние: хорошее. Цена: $300",
+    "owner": "Анатолий"  
+}
+
+
+###
+
+#обновление данных пользователя
+PATCH {{baseUrl}}/user/5
+Content-Type: application/json
+
+{  
+    "name": "Анатолий",
+    "email": "tolik@mail.com",
+    "password": "1111"  
+}
+
+
+###
+
+#получаем объявление по id
+GET {{baseUrl}}/adv/1
+Content-Type: application/json
+
+
+###
+
+#получаем пользователя по id
+GET {{baseUrl}}/user/1
+
+Content-Type: application/json
+
+
+###
+
+#удаляем объявление
+DELETE  {{baseUrl}}/adv/1
+Content-Type: application/json
+
+
+###
+
+
+#удаляем пользователя
+DELETE  {{baseUrl}}/user/4
+Content-Type: application/json
